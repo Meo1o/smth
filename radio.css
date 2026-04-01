@@ -1,0 +1,146 @@
+.radio-container {
+  position: relative;
+  width: 500px;
+  opacity: 0.68;
+  height: auto;
+  top: 2%;
+}
+
+.radio-img {
+  width: 95%;
+}
+
+.play-button {
+  position: absolute;
+  top: 49.5%;
+  left: 15.3%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: 30vw;
+  max-width: 44px;
+  max-height: 44px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.play-button svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.station.current {
+  background-color: #7f9c68;
+  color: black;
+  font-weight: bold;
+}
+
+.display {
+  position: absolute;
+  top: 33.7%;
+  left: 13.4%;
+  width: 23%;
+  text-align: center;
+  color: #000;
+  opacity: 0.95;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.5));
+}
+
+.glow {
+  color: #000;
+  text-shadow:
+    0 0 5px #bae190,
+    0 0 5px #bae190,
+    0 0 5px #bae190,
+    0 0 5px #bae190;
+}
+
+
+#gif {
+  position: absolute;
+  top: 9.5%;
+  left: 15.5%;
+  width: 75%;
+  max-width: 150px;
+  display: none;
+  opacity: 0.98;
+}
+
+
+@keyframes blink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0.5; }
+}
+
+
+.playing #pause-icon {
+  animation: blink 1s infinite;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .radio-container {
+    width: 75% !important;
+    max-width: none !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto;
+  }
+  
+@media (max-width: 650px) {
+  .play-button {
+    width: 12vw;
+    height: 12vw;
+    max-width: 30px;
+    max-height: 30px;
+    top: 51.4%;
+    left: 16%;
+  }
+
+
+  @media (max-width: 500px) {
+  .play-button {
+    width: 12vw;
+    height: 12vw;
+    max-width: 25px;
+    max-height: 25px;
+    top: 49.6%;
+    left: 15.5%;
+  }
+
+.display {
+  position: absolute;
+  top: 33.7%;
+  left: 13.4%;
+  width: 23%;
+  text-align: center;
+  color: #000;
+  opacity: 0.95;
+  font-family: monospace;
+  font-size: 9px;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 0.5px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 650px) {
+    #gif {
+  position: absolute;
+  top: 6%;
+  left: 12%;
+  width: 75%;
+  max-width: 95px;
+  display: none;
+  opacity: 0.98;
+}
+  }

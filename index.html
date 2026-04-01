@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local 8's Radio</title>
+  <link rel="icon" type="image/x-icon" href="file.garden/aGGJpwNLWActgKKi/favicon.png" />
+  <link rel="stylesheet" href="l8sradio.neocities.org/css/main.css" />
+  <link rel="stylesheet" href="l8sradio.neocities.org/css/radio.css" />
+  <link rel="stylesheet" href="l8sradio.neocities.org/css/chat.css" />
+ 
+<style>
+      @keyframes scroll-left {
+        0% { transform: translateX(936px); }
+        100% { transform: translateX(-548px); }
+      }
+    </style></head>
+<body>
+
+  <div class="nav-wrapper">
+    <div class="nav-left">
+
+      <!-- FILE Dropdown -->
+      <div class="dropdown" onclick="toggleDropdown(this, event)">
+        <span>FILE</span>
+        <div class="dropdown-content">
+          <div class="station">New</div>
+          <div class="station">
+            <span style="cursor:pointer;" onclick="event.stopPropagation(); togglePopup('sitesPopup');">Open</span></div>
+          <div class="station">Save</div>
+          <div class="station" onclick="window.open('https://file.garden/aGGJpwNLWActgKKi/24_L8s_artical_final.jpg', '_blank')">Print</div>
+          <div class="station" onclick="window.open('https://open.spotify.com/user/3134jzcgjmqem5ybpy65stcu7axm?si=a1f3b43c3618414c', '_blank')">Spotify</div>
+          <div class="station" onclick="window.open('https://www.soundcloud.com/local8sfm', '_blank')">Soundcloud</div>
+          <div class="station" onclick="window.open('https://coff.ee/local8s', '_blank')">Support</div>
+        </div>
+      </div>
+
+
+      <!-- TESTER Dropdown with nested submenus -->
+      <div class="dropdown" onclick="toggleDropdown(this, event)">
+        <span>STATIONS</span>
+        <div class="dropdown-content">
+
+          <div class="station">
+           98.1FM - HOUSE
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="x">HSE-VIBE01N</div>
+              <div class="sub-station" data-index="5">HSE-WAVE02C</div>
+              <div class="sub-station" data-index="11">HSE-HEAT04N</div>
+              <div class="sub-station" data-index="14">HSE-DEEP01N</div>
+              <div class="sub-station" data-index="15">HSE-CULT01X</div>
+            </div>
+          </div>
+
+          <div class="station">
+            101.5FM - MIX
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="0">XPR-DRFT01N</div>
+              <div class="sub-station" data-index="1">XPR-GLIT02N</div>
+              <div class="sub-station" data-index="7">XPR-BOOM03E</div>
+              <div class="sub-station" data-index="18">XPR-VELV01N</div>
+
+            </div>
+          </div>
+
+          <div class="station">
+            97.7FM - DISCO
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="2">DSC-SPIN01N</div>
+              <div class="sub-station" data-index="6">DSC-HAZE02C</div>
+              <div class="sub-station" data-index="13">DSC-GLOW01P</div>
+            </div>
+          </div>
+
+          <div class="station">
+            104.3FM - ALT/ROCK
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="3">ALT-HAZE01M</div>
+              <div class="sub-station" data-index="8">ALT-GRIT01E</div>
+              <div class="sub-station" data-index="9">ALT-TEAR01M</div>
+              <div class="sub-station" data-index="16">ALT-EMOT01H</div>
+            </div>
+          </div>
+
+           <div class="station">
+            92.1FM - TECH HOUSE
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="4">THS-VOID01N</div>
+            </div>
+          </div>
+
+
+           <div class="station">
+            88.9FM - DANCE/CLUB
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="10">DNC-PULS01E</div>
+              <div class="sub-station" data-index="17">DNC-FEVR01P</div>
+            </div>
+          </div>
+
+          <div class="station">
+           107.1FM - THE AUX
+            <div class="sub-dropdown">
+              <div class="sub-station" data-index="12">AUX-MBBH01D</div>
+            </div>
+          </div>
+
+      
+
+        </div>
+      </div>
+
+      <span style="cursor:pointer;" onclick="togglePopup('aboutPopup')">ABOUT</span>
+      <span style="cursor:pointer;" onclick="togglePopup('songPopup')">SPOTIFY</span>
+      <span style="cursor:pointer;" onclick="togglePopup('contactPopup')">CONTACT</span>
+
+    </div>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-text" style="animation: 24.7333s linear 0s infinite normal none running scroll-left;">NEW STATION ADDED 3/9/26 !!! NEW STATION ADDED 3/9/26 !!!! NEW STATION ADDED 3/9/26</div>
+    </div>
+
+    <div class="nav-right">
+      <span style="cursor:pointer;" onclick="toggleGuestbook()">LEAVE A MESSAGE</span>
+    </div>
+  </div>
+
+   <!-- About Popup -->
+  <div id="aboutPopup" class="popup-box">
+     <div class="popup-header">
+    <span class="popup-title">ABOUT</span>
+    <button class="popup-close" onclick="togglePopup('aboutPopup')">X</button>
+  </div>
+    <p><img src="l8sradio.neocities.org/images/tester.webp" alt="About" width="115px" style="float:left; margin:0 10px 0px 3px;" />
+    <b>ABOUT LOCAL 8's</b><br />
+    Broadcasting live from the Nightosphere.</p><p>
+    Local 8's started in 2022, named after the weather channel's classic segment "Local on the 8s". xxxx xxx xxxxxxxxx xxxx</p><p>
+    </p><center>Dedicated to Jean Gillette.
+    <p>
+    <a href="https://petrapixel.neocities.org/contest" target="_blank">
+      <img src="file.garden/aGGJpwNLWActgKKi/l8s_silver.png" /></a><br />
+      Most unique site 2nd place winner 2025
+  </p></center></div>
+
+    <div id="songPopup" class="popup-box">
+    <div class="popup-header">
+    <span class="popup-title">SPOTIFY</span>
+    <button class="popup-close" onclick="togglePopup('songPopup')">X</button>
+  </div>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6TP5C2S53ggBDB5buMuxRz?utm_source=generator&amp;theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      
+  </div>
+
+  <!-- Contact Popup -->
+  <div id="contactPopup" class="popup-box">
+     <div class="popup-header">
+    <span class="popup-title">CONTACT</span>
+    <button class="popup-close" onclick="togglePopup('contactPopup')">X</button>
+  </div>
+    <p></p><center><img src="l8sradio.neocities.org/images/email.svg" width="25px" /><br /><br />LOCAL8SFM@GMAIL.COM<p>
+    <strong>BUY ME A COFFEE</strong><br />
+    <a href="www.coff.ee/local8s" target="_blank">coff.ee/local8s</a></p></center><p></p>
+  </div>
+
+
+
+      <!-- Sites Popup -->
+ <div id="sitesPopup" class="popup-box">
+  <div class="popup-header">
+    <span class="popup-title">SITES</span>
+    <button class="popup-close" onclick="togglePopup('sitesPopup')">X</button>
+  </div>
+    <a href="https://cloudlandco.com"><img src="cloudlandco.com/assets/imgs/buttons/cloudlandbtn.gif" /></a>
+    <a href="https://petrapixel.neocities.org/" target="_blank"><img src="cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" /></a>
+    <a href="https://coffeeplant.neocities.org/" target="_blank"><img src="file.garden/aGGJpwNLWActgKKi/sites/coffeeplant.png" /></a>
+    <a href="https://myrrh.neocities.org/"> <img src="myrrh.neocities.org/directory/myrrh%20button%201.png" /> </a>
+    <a href="https://philia995.neocities.org/"><img src="file.garden/ZxGm4CZD_A4ytfMc/philia995button.gif" /></a>
+    <a href="https://3maqi.neocities.org/"><img src="3maqi.neocities.org/images/buttons/3maqi_animated.gif" /></a>
+    <a href="https://inthemeantimewecry.neocities.org/"> <img src="inthemeantimewecry.neocities.org/edited_gifs/eg_my_button.gif" style="image-rendering: pixelated;" /> </a>
+    <a href="https://iloush.neocities.org/" target="_blank"><img src="cdn.jsdelivr.net/gh/iloush-web/iloush-garden@latest/public/images/button_iloush_garden.gif" style="image-      rendering: pixelated;" /></a>
+                
+    
+  </div>
+
+                        
+                            
+
+    
+  <!-- Guestbook -->
+  <div id="guestbook" class="pixel-guestbook">
+    <div class="gb-header">
+      <span>LEAVE A MESSAGE</span>
+      <button class="gb-minimize">-</button>
+    </div>
+    <div class="gb-messages" id="gbMessages"><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      Refresh the page to change the station and use space bar to pause/play
+    </div><div class="gb-message">
+      <span class="msg-date">[6/7/25]:</span>
+      Amazing!
+    </div><div class="gb-message">
+      <span class="msg-date">[6/7/25]:</span>
+      I'm sooo stoked on this!!
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      <a href="https://open.spotify.com/user/3134jzcgjmqem5ybpy65stcu7axm?si=a1f3b43c3618414c&amp;nd=1&amp;dlsi=106a8ff7243d44fb" target="_blank" rel="noopener">open.spotify.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[6/9/25]:</span>
+      found this through your reddit comment. dope!
+    </div><div class="gb-message">
+      <span class="msg-date">[6/18/25]:</span>
+      nice meeting you @ expo! cool site :)
+    </div><div class="gb-message">
+      <span class="msg-date">[6/22/25]:</span>
+      This site is so weird. But I love it.
+    </div><div class="gb-message">
+      <span class="msg-date">[6/27/25]:</span>
+      is there a button that lets you see what songs playing ?? this is a bangerooni
+    </div><div class="gb-message">
+      <span class="msg-date">[6/27/25]:</span>
+      also how did you get on my computer
+    </div><div class="gb-message">
+      <span class="msg-date">[6/29/25]:</span>
+      hi chat!!
+    </div><div class="gb-message">
+      <span class="msg-date">[6/29/25]:</span>
+      Most epic!
+    </div><div class="gb-message">
+      <span class="msg-date">[6/30/25]:</span>
+      this is awesome
+    </div><div class="gb-message">
+      <span class="msg-date">[7/2/25]:</span>
+      ai is bad
+    </div><div class="gb-message">
+      <span class="msg-date">[7/2/25]:</span>
+      so cool
+    </div><div class="gb-message">
+      <span class="msg-date">[7/3/25]:</span>
+      sick
+    </div><div class="gb-message">
+      <span class="msg-date">[7/4/25]:</span>
+      hello strangers
+    </div><div class="gb-message">
+      <span class="msg-date">[7/5/25]:</span>
+      Yooooo
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      <a href="https://open.spotify.com/user/3134jzcgjmqem5ybpy65stcu7axm?si=a1f3b43c3618414c&amp;nd=1&amp;dlsi=106a8ff7243d44fb" target="_blank" rel="noopener">open.spotify.com</a>
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      new station 88.6FM
+    </div><div class="gb-message">
+      <span class="msg-date">[7/10/25]:</span>
+      Meow meow meow meow meow :]]
+    </div><div class="gb-message">
+      <span class="msg-date">[7/17/25]:</span>
+      t(-_-t) from borrego springs
+    </div><div class="gb-message">
+      <span class="msg-date">[7/21/25]:</span>
+      meow
+    </div><div class="gb-message">
+      <span class="msg-date">[8/3/25]:</span>
+      Slime me
+    </div><div class="gb-message">
+      <span class="msg-date">[8/3/25]:</span>
+      I slimed so hard rn
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      <a href="https://buymeacoffee.com/local8s" target="_blank" rel="noopener">buymeacoffee.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[8/9/25]:</span>
+      nice music!
+    </div><div class="gb-message">
+      <span class="msg-date">[8/11/25]:</span>
+      hihi
+    </div><div class="gb-message">
+      <span class="msg-date">[8/13/25]:</span>
+      &lt;3
+    </div><div class="gb-message">
+      <span class="msg-date">[8/13/25]:</span>
+      cool music
+    </div><div class="gb-message">
+      <span class="msg-date">[8/13/25]:</span>
+      love the look of this!
+    </div><div class="gb-message">
+      <span class="msg-date">[8/13/25]:</span>
+      hi
+    </div><div class="gb-message">
+      <span class="msg-date">[8/15/25]:</span>
+      this is super awesome sauce!
+    </div><div class="gb-message">
+      <span class="msg-date">[8/23/25]:</span>
+      hey hey hey
+    </div><div class="gb-message">
+      <span class="msg-date">[8/26/25]:</span>
+      hii
+    </div><div class="gb-message">
+      <span class="msg-date">[8/26/25]:</span>
+      i really loved this, thank you for creating this
+    </div><div class="gb-message">
+      <span class="msg-date">[8/30/25]:</span>
+      ⠀
+    </div><div class="gb-message">
+      <span class="msg-date">[8/31/25]:</span>
+      \m/ \m/
+    </div><div class="gb-message">
+      <span class="msg-date">[9/6/25]:</span>
+      ok
+    </div><div class="gb-message">
+      <span class="msg-date">[9/11/25]:</span>
+      found you from Reddit! I love this!
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      it's been a minute, new mix uploaded 94.5FM
+    </div><div class="gb-message">
+      <span class="msg-date">[9/15/25]:</span>
+      This is awesome, thanks for the jams!
+    </div><div class="gb-message">
+      <span class="msg-date">[9/15/25]:</span>
+      love this vibe
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      new sexxxy tech house mix now live on: <a href="https://soundcloud.com/local8sfm/1800hotsoup-live-on-l8s-radio-091925" target="_blank" rel="noopener">soundcloud.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[9/25/25]:</span>
+      ads
+    </div><div class="gb-message">
+      <span class="msg-date">[9/25/25]:</span>
+      hello
+    </div><div class="gb-message">
+      <span class="msg-date">[9/25/25]:</span>
+      hello guys
+    </div><div class="gb-message">
+      <span class="msg-date">[10/1/25]:</span>
+      traffic and weather 2gether.... on the 8s... B-)
+    </div><div class="gb-message">
+      <span class="msg-date">[10/2/25]:</span>
+      hiii
+    </div><div class="gb-message">
+      <span class="msg-date">[10/5/25]:</span>
+      ooooooooeeeee
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      &lt;3 &lt;3 &lt;3
+    </div><div class="gb-message">
+      <span class="msg-date">[10/6/25]:</span>
+      M
+    </div><div class="gb-message">
+      <span class="msg-date">[10/6/25]:</span>
+      hi hi
+    </div><div class="gb-message">
+      <span class="msg-date">[10/6/25]:</span>
+      I love cool people who make websites. Thank you for this one.
+    </div><div class="gb-message">
+      <span class="msg-date">[10/7/25]:</span>
+      kuroi here! thank you so much for your message on my guestbook!
+    </div><div class="gb-message">
+      <span class="msg-date">[10/7/25]:</span>
+      this website rocks
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      <a href="https://buymeacoffee.com/local8s" target="_blank" rel="noopener">buymeacoffee.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[10/11/25]:</span>
+      Hi
+    </div><div class="gb-message">
+      <span class="msg-date">[10/13/25]:</span>
+      Suppahhh fia tunes
+    </div><div class="gb-message">
+      <span class="msg-date">[10/21/25]:</span>
+      hello
+    </div><div class="gb-message">
+      <span class="msg-date">[10/21/25]:</span>
+      is anyone on here
+    </div><div class="gb-message">
+      <span class="msg-date">[10/21/25]:</span>
+      fuck
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      yea, im here
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      whatsup
+    </div><div class="gb-message">
+      <span class="msg-date">[10/27/25]:</span>
+      diddy
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      october playlist is now live <a href="https://open.spotify.com/playlist/3D8fFJvfUnDOFVM2jaF4vX?si=gvApD4zKRJu3RaME0fgJ9w" target="_blank" rel="noopener">open.spotify.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[11/8/25]:</span>
+      Hello
+    </div><div class="gb-message">
+      <span class="msg-date">[11/10/25]:</span>
+      loving all this HOUSE
+    </div><div class="gb-message">
+      <span class="msg-date">[11/10/25]:</span>
+      this is now my study radio
+    </div><div class="gb-message">
+      <span class="msg-date">[11/12/25]:</span>
+      test
+    </div><div class="gb-message">
+      <span class="msg-date">[11/12/25]:</span>
+      Great tunes! I love it &lt;3
+    </div><div class="gb-message">
+      <span class="msg-date">[11/15/25]:</span>
+      the stations are so cool!
+    </div><div class="gb-message">
+      <span class="msg-date">[11/16/25]:</span>
+      loveeeee
+    </div><div class="gb-message">
+      <span class="msg-date">[11/16/25]:</span>
+      hola
+    </div><div class="gb-message">
+      <span class="msg-date">[11/16/25]:</span>
+      send me a chatout
+    </div><div class="gb-message">
+      <span class="msg-date">[11/16/25]:</span>
+      s/o u.s. girls !!!!
+    </div><div class="gb-message">
+      <span class="msg-date">[11/18/25]:</span>
+      where can i see the song name aaa
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      new station 102.9FM
+    </div><div class="gb-message">
+      <span class="msg-date">[11/20/25]:</span>
+      Love
+    </div><div class="gb-message">
+      <span class="msg-date">[11/24/25]:</span>
+      nice place
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      thank u
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      new mix uploaded 89.9fm
+    </div><div class="gb-message">
+      <span class="msg-date">[11/28/25]:</span>
+      it looks awesome here! the musical notes gif don't show up
+    </div><div class="gb-message">
+      <span class="msg-date">[12/7/25]:</span>
+      this site is really cool and clean
+    </div><div class="gb-message">
+      <span class="msg-date">[12/8/25]:</span>
+      such good music!!!
+    </div><div class="gb-message">
+      <span class="msg-date">[12/10/25]:</span>
+      ur site is gr8!
+    </div><div class="gb-message">
+      <span class="msg-date">[12/11/25]:</span>
+      ?
+    </div><div class="gb-message">
+      <span class="msg-date">[12/15/25]:</span>
+      Woah, I came here from a reddit thread about a live chat, but the music here is awesome as well!!!
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      happy ur here
+    </div><div class="gb-message">
+      <span class="msg-date">[1/3/26]:</span>
+      yo this is awesome
+    </div><div class="gb-message">
+      <span class="msg-date">[1/3/26]:</span>
+      might be a stupid question but is this like a prerecording or actually live?
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      excited to announce that l8s got 2nd place in the indie web awards for most unique website! <a href="https://petrapixel.neocities.org/contest" target="_blank" rel="noopener">petrapixel.neocities.org</a> thank u for the votes, happy new year!
+    </div><div class="gb-message">
+      <span class="msg-date">[1/8/26]:</span>
+      this is so sick
+    </div><div class="gb-message">
+      <span class="msg-date">[1/8/26]:</span>
+      sweet
+    </div><div class="gb-message">
+      <span class="msg-date">[1/10/26]:</span>
+      The site aesthetic is so cool!
+    </div><div class="gb-message">
+      <span class="msg-date">[1/11/26]:</span>
+      Hi
+    </div><div class="gb-message">
+      <span class="msg-date">[1/11/26]:</span>
+      H haven't been on here since last year
+    </div><div class="gb-message">
+      <span class="msg-date">[1/12/26]:</span>
+      wHAT UPPP hope everyone good
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      welcome back
+    </div><div class="gb-message">
+      <span class="msg-date">[1/13/26]:</span>
+      lalala lovely
+    </div><div class="gb-message">
+      <span class="msg-date">[1/14/26]:</span>
+      what up
+    </div><div class="gb-message">
+      <span class="msg-date">[1/14/26]:</span>
+      this is sick yo
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      98.1FM HSE-CULT01X new mix uploaded show some luv
+    </div><div class="gb-message">
+      <span class="msg-date">[1/16/26]:</span>
+      Some allegedly type shit!
+    </div><div class="gb-message">
+      <span class="msg-date">[1/16/26]:</span>
+      Intro is fiya
+    </div><div class="gb-message">
+      <span class="msg-date">[1/17/26]:</span>
+      Sirius estuvo aquí
+    </div><div class="gb-message">
+      <span class="msg-date">[1/19/26]:</span>
+      this is awesome
+    </div><div class="gb-message">
+      <span class="msg-date">[1/21/26]:</span>
+      na so sick do
+    </div><div class="gb-message">
+      <span class="msg-date">[1/22/26]:</span>
+      wdasdwa
+    </div><div class="gb-message">
+      <span class="msg-date">[1/22/26]:</span>
+      wadfgrgf
+    </div><div class="gb-message">
+      <span class="msg-date">[1/22/26]:</span>
+      rg45r4
+    </div><div class="gb-message">
+      <span class="msg-date">[1/22/26]:</span>
+      cool site :)
+    </div><div class="gb-message">
+      <span class="msg-date">[1/23/26]:</span>
+      Hey guys
+    </div><div class="gb-message">
+      <span class="msg-date">[1/23/26]:</span>
+      How's it going
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      feeling fluffy, hbu
+    </div><div class="gb-message">
+      <span class="msg-date">[1/26/26]:</span>
+      love the green palette
+    </div><div class="gb-message">
+      <span class="msg-date">[1/26/26]:</span>
+      awesome page
+    </div><div class="gb-message">
+      <span class="msg-date">[1/28/26]:</span>
+      This website is so cool
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      january 2026 playlist is now posted <a href="https://open.spotify.com/playlist/2xS92VuucKiamuGbWVh95e?si=fyAyJtirQ2Gvw7HeuhytsQ" target="_blank" rel="noopener">open.spotify.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[1/29/26]:</span>
+      hi
+    </div><div class="gb-message">
+      <span class="msg-date">[1/29/26]:</span>
+      killer tracks, killer design, this place is my new spotify
+    </div><div class="gb-message">
+      <span class="msg-date">[1/29/26]:</span>
+      i should be working but the songs are fire
+    </div><div class="gb-message">
+      <span class="msg-date">[2/4/26]:</span>
+      hiiii
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      new mix DNC-FEVR01P on 88.9FM get ready 2 sweat daddy
+    </div><div class="gb-message">
+      <span class="msg-date">[2/11/26]:</span>
+      Awesome!!
+    </div><div class="gb-message">
+      <span class="msg-date">[2/12/26]:</span>
+      Hi
+    </div><div class="gb-message">
+      <span class="msg-date">[2/12/26]:</span>
+      I had a question for you
+    </div><div class="gb-message">
+      <span class="msg-date">[2/12/26]:</span>
+      I wanted to embed this chat onto my site is there anyway you could make a chat just like this for my site? I could give full credit and everything. Just 2 changes would need to happen: 1. Rather than the date I want the users choice of their username (login/signup) and an owners account so they can delete messages and all that only the owner can access. Please reply by replying me at: LoopUp.site@gmail.com
+    </div><div class="gb-message">
+      <span class="msg-date">[2/12/26]:</span>
+      Thanks!
+    </div><div class="gb-message">
+      <span class="msg-date">[2/19/26]:</span>
+      Yo
+    </div><div class="gb-message">
+      <span class="msg-date">[2/19/26]:</span>
+      Chat are we cooked?
+    </div><div class="gb-message">
+      <span class="msg-date">[2/19/26]:</span>
+      yes
+    </div><div class="gb-message">
+      <span class="msg-date">[2/19/26]:</span>
+      this is so pretty
+    </div><div class="gb-message">
+      <span class="msg-date">[2/19/26]:</span>
+      how does any of this work?
+    </div><div class="gb-message">
+      <span class="msg-date">[2/19/26]:</span>
+      i love the chatbox, i love the radio
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      its powered by zopiclone and lava lamps
+    </div><div class="gb-message">
+      <span class="msg-date">[2/20/26]:</span>
+      blahblahblah
+    </div><div class="gb-message">
+      <span class="msg-date">[2/20/26]:</span>
+      heeeewwwoo
+    </div><div class="gb-message">
+      <span class="msg-date">[2/20/26]:</span>
+      :3
+    </div><div class="gb-message">
+      <span class="msg-date">[2/20/26]:</span>
+      Hello
+    </div><div class="gb-message">
+      <span class="msg-date">[2/21/26]:</span>
+      sick
+    </div><div class="gb-message">
+      <span class="msg-date">[2/22/26]:</span>
+      this is great\
+    </div><div class="gb-message">
+      <span class="msg-date">[2/22/26]:</span>
+      Some cool stuff here i see :3
+    </div><div class="gb-message">
+      <span class="msg-date">[2/22/26]:</span>
+      hi
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      hi
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      the hell was that
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      whos molesting the deck
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      Hey!
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      Hi
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      hola
+    </div><div class="gb-message">
+      <span class="msg-date">[2/23/26]:</span>
+      Thats crazy
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      tell me about it
+    </div><div class="gb-message">
+      <span class="msg-date">[2/25/26]:</span>
+      hell yas
+    </div><div class="gb-message">
+      <span class="msg-date">[2/25/26]:</span>
+      nice site
+    </div><div class="gb-message">
+      <span class="msg-date">[2/25/26]:</span>
+      here from reddit btw
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      glad you made it here to bojuka bog, welcome
+    </div><div class="gb-message">
+      <span class="msg-date">[2/26/26]:</span>
+      linked from ur comment :]
+    </div><div class="gb-message">
+      <span class="msg-date">[2/27/26]:</span>
+      also here from reddit! Cool project
+    </div><div class="gb-message">
+      <span class="msg-date">[2/28/26]:</span>
+      what the fuck is this?
+    </div><div class="gb-message">
+      <span class="msg-date">[3/1/26]:</span>
+      orion was here
+    </div><div class="gb-message">
+      <span class="msg-date">[3/1/26]:</span>
+      fun stuff
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      February spotify playlist now live: <a href="https://open.spotify.com/playlist/6TP5C2S53ggBDB5buMuxRz?si=2xXMrMeBQ9ex-g0BLKm7lA" target="_blank" rel="noopener">open.spotify.com</a>
+    </div><div class="gb-message">
+      <span class="msg-date">[3/2/26]:</span>
+      was looking for a music site to study with that doesn't take up my computers resoucres and found this, thanks!
+    </div><div class="gb-message">
+      <span class="msg-date">[3/6/26]:</span>
+      jjjjjjjjjjjj
+    </div><div class="gb-message">
+      <span class="msg-date">[3/6/26]:</span>
+      hi
+    </div><div class="gb-message">
+      <span class="msg-date">[3/8/26]:</span>
+      Hello
+    </div><div class="gb-message">
+      <span class="msg-date">[3/9/26]:</span>
+      hiii
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      new mix posted 101.5FM XPR-VELV01N
+    </div><div class="gb-message">
+      <span class="msg-date">[3/10/26]:</span>
+      wonderful site
+    </div><div class="gb-message">
+      <span class="msg-date">[3/11/26]:</span>
+      bleh
+    </div><div class="gb-message">
+      <span class="msg-date">[3/11/26]:</span>
+      cool site
+    </div><div class="gb-message">
+      <span class="msg-date">[3/11/26]:</span>
+      how does the chatbox work i beg of you!!!! &lt;3
+    </div><div class="gb-message">
+      <span class="msg-date">[3/12/26]:</span>
+      loves it
+    </div><div class="gb-message">
+      <span class="msg-date">[3/18/26]:</span>
+      the radio feature is so cool. love your site
+    </div><div class="gb-message">
+      <span class="msg-date">[3/24/26]:</span>
+      alright alright alright-matt mc
+    </div><div class="gb-message">
+      <span class="msg-date">[3/25/26]:</span>
+      Someone post their credit card details
+    </div><div class="gb-message">
+      <span class="gb-admin-label">MODERATOR:</span>
+      whatup matt mac
+    </div><div class="gb-message">
+      <span class="msg-date">[3/28/26]:</span>
+      Ponkis
+    </div><div class="gb-message">
+      <span class="msg-date">[3/28/26]:</span>
+      ponkdonkulus
+    </div><div class="gb-message">
+      <span class="msg-date">[3/28/26]:</span>
+      goin down to south park
+    </div><div class="gb-message">
+      <span class="msg-date">[3/28/26]:</span>
+      gonna have my self a time
+    </div><div class="gb-message">
+      <span class="msg-date">[4/1/26]:</span>
+      Awesome  site
+    </div></div>
+    <div class="gb-input">
+      <div class="input-fields">
+        <input type="text" id="gbText" placeholder="Type your message.." />
+      </div>
+      <button id="gbSubmit">SEND</button>
+    </div>
+  </div>
+
+  <!-- Radio Player -->
+  <div class="radio-container">
+    <img src="l8sradio.neocities.org/images/L8s_player_v2.webp" alt="radio UI" class="radio-img" />
+    <div class="display">
+      <div id="track-name">104.3FM ALT-EMOT01H</div>
+      <div id="time">0:00</div>
+    </div>
+    <button class="play-button" id="playPauseBtn">
+      <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#7f9c68" style="display: block;">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#7f9c68" style="display:none;">
+        <path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+    <audio id="audio" preload="none" src="https://file.garden/aGGJpwNLWActgKKi/012326_EMO_L8.mp3"></audio>
+    <img id="gif" src="u.cubeupload.com/1800HOTSOUP/musicalnotesv2.gif" />
+  </div>
+  
+  <script type="module" src="l8sradio.neocities.org/js/radio.js"></script>
+  <script type="module" src="l8sradio.neocities.org/js/chat.js"></script>
+  <script type="module" src="l8sradio.neocities.org/js/ui.js" defer=""></script>
+
+
+
+<iframe style="display: none;"></iframe><iframe src="https://s-gke-usc1-nssi4-35.firebaseio.com/.lp?dframe=t&amp;id=449470&amp;pw=FiNFmo7Ewr&amp;ns=l8-guestbook-default-rtdb" style="display: none;"></iframe></body></html>
